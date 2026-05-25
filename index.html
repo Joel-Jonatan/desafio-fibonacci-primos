@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Web: Fibonacci y Números Primos</title>
+    <link rel="stylesheet" href="Css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Matemáticas que resuelven problemas</h1>
+        <h2>Fibonacci y Números Primos en la vida real</h2>
+        <div class="autor-info">
+            <p><strong>Estudiante:</strong> Joel Jonatan Chura Arroyo</p>
+            <p><strong>Materia:</strong> Programación Web I</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="card">
+            <h3>1. Contexto del Problema: Ahorro Progresivo</h3>
+            <p>
+                Una persona desea ahorrar dinero durante varios meses. En lugar de ahorrar una cantidad fija, 
+                decide usar la serie de Fibonacci para aumentar su ahorro poco a poco.
+            </p>
+            <p>
+                La página permite ingresar el número de meses y calcular cuánto se ahorraría siguiendo este patrón, 
+                verificando además si el monto de ahorro de cada mes corresponde a un número primo.
+            </p>
+        </section>
+
+        <section class="card">
+            <h3>2. Explicación de los Algoritmos</h3>
+            <div class="algoritmo-explicacion">
+                <h4>Sucesión de Fibonacci sin vectores</h4>
+                <p>
+                    Se trabaja con variables simples independientes: <code>let a = 0;</code>, <code>let b = 1;</code> y <code>let c;</code>. 
+                    Mediante un ciclo iterativo se calculan los siguientes valores acumulados sin necesidad de utilizar vectores en memoria.
+                </p>
+                <h4>Verificación de Número Primo</h4>
+                <p>
+                    Un número primo es aquel que solo se puede dividir exactamente entre 1 y sí mismo. Se captura el valor y mediante un 
+                    ciclo se evalúa con un residuo igual a cero. Si el <code>contador</code> es igual a 2, el número se determina como primo.
+                </p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h3>3. Configura tu Plan de Ahorro</h3>
+            <form id="formulario-ahorro">
+                <div class="form-group">
+                    <label for="meses">Cantidad de meses a proyectar:</label>
+                    <input type="number" id="meses" min="1" max="40" placeholder="Ej. 12" required>
+                    <small>Ingrese la cantidad de meses para ejecutar la solución en pantalla.</small>
+                </div>
+                <button type="submit" id="btn-calcular">Calcular Plan de Ahorro</button>
+            </form>
+        </section>
+
+        <section class="card hidden" id="seccion-resultado">
+            <h3>4. Resultados del Análisis de Ahorro</h3>
+            
+            <div class="resumen-ahorro">
+                <p><strong>Total de meses evaluados:</strong> <span id="resumen-meses">0</span></p>
+                <p><strong>Monto Total Ahorrado:</strong> Bs. <span id="resumen-total">0</span></p>
+                <p><strong>Meses con depósitos Primos:</strong> <span id="resumen-primos">0</span></p>
+            </div>
+
+            <h4>Desglose Mensual Detallado:</h4>
+            <div id="tabla-resultados" class="tabla-contenedor">
+                </div>
+        </section>
+
+        <section class="card">
+            <h3>5. Conclusión</h3>
+            <p>
+                El uso de patrones matemáticos como la serie de Fibonacci demuestra que situaciones cotidianas como el ahorro pueden 
+                analizarse y modelarse a través de la programación. Al procesar estos datos en conjunto con la verificación de números primos, 
+                logramos aplicar la teoría analítica directamente en una solución del mundo real para la toma de decisiones financieras eficientes.
+            </p>
+        </section>
+
+        <section class="card enlaces-card">
+            <h3>6. Accesos del Proyecto</h3>
+            <div class="enlaces-contenedor">
+                <a href="https://github.com/Joel-Jonatan/desafio-fibonacci-primos" id="enlace-git" target="_blank" class="btn-enlace git">Ver Repositorio Git (GitHub)</a>
+                
+                <a href="https://joel-jonatan.github.io/desafio-fibonacci-primos/" id="enlace-web" target="_blank" class="btn-enlace web">Ver Página Web Publicada</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Desarrollo Web I | Desafío Fibonacci y Números Primos</p>
+    </footer>
+
+    <script src="Js/script.js"></script>
+</body>
+</html>

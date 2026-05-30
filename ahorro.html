@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Plan de ahorro progresivo usando la serie de Fibonacci con análisis de números primos - Inversión inteligente">
+    <meta name="author" content="Joel Jonatan Chura Arroyo">
+    <title>Plan de Ahorro | Fibonacci y Números Primos en Finanzas</title>
+    <link rel="stylesheet" href="Css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="theme-ahorro">
+
+    <!-- NAVBAR MEJORADA -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <i class="fas fa-square-root-variable"></i>
+            <span>MathWeb I</span>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i><span> Inicio</span></a>
+            <a href="seguridad.html"><i class="fas fa-shield-alt"></i><span> Ciberseguridad</span></a>
+            <a href="naturaleza.html"><i class="fas fa-leaf"></i><span> Diseño Natural</span></a>
+            <a href="ahorro.html" class="active"><i class="fas fa-chart-line"></i><span> Plan de Ahorro</span></a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- BANNER MEJORADO -->
+        <section class="card banner-tema">
+            <div class="banner-icon">
+                <i class="fas fa-coins"></i>
+            </div>
+            <div class="banner-content">
+                <h2>Modelado Financiero</h2>
+                <h3>Ahorro Progresivo Inteligente</h3>
+                <p style="text-align: center;">Simulador estratégico de acumulación de capital escalable mediante patrones matemáticos compuestos.</p>
+        </section>
+            </div>
+        </section>
+
+        <!-- GRID DE INFORMACIÓN MEJORADA -->
+        <div class="grid-informacion-completa">
+            <section class="card contexto-card">
+                <div class="card-header-icon">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>Contexto del Problema Real</h3>
+                </div>
+                <p>Uno de los mayores retos en la economía personal es consolidar un hábito estable de ahorro. Intentar guardar cuotas mensuales fijas muy altas suele provocar frustración y abandono temprano ante imprevistos económicos. Un esquema de progresión orgánica basado en <strong>Fibonacci</strong> disminuye la fricción inicial permitiendo ahorrar montos pequeños que crecen de manera escalonada conforme se fortalece la disciplina financiera del usuario.</p>
+                <div class="contexto-highlight">
+                    <i class="fas fa-chart-line"></i>
+                    <span>📊 Ahorro progresivo: Mes 1: Bs.1, Mes 2: Bs.1, Mes 3: Bs.2, Mes 4: Bs.3...</span>
+                </div>
+            </section>
+
+            <section class="card algoritmo-card">
+                <div class="card-header-icon">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <h3>Análisis Matemático del Algoritmo</h3>
+                </div>
+                <p>Este sistema unifica ambas ramas del desafío: la progresión de depósitos mensuales se calcula sumando los dos meses anteriores (Secuencia Fibonacci pura mediante variables de intercambio libre). Paralelamente, cada cuota resultante pasa por un filtro de primalidad. Si el depósito mensual es primo, se cataloga como un <strong>"Hito de Ahorro Blindado"</strong>, destacándolo en el estado de cuenta inyectado dinámicamente en la pantalla.</p>
+                <div class="algoritmo-ejemplo">
+                    <code>📐 Fibonacci: 1, 1, 2, 3, 5, 8, 13, 21... | 🔢 Primos: 2, 3, 5, 13, 89...</code>
+                </div>
+            </section>
+        </div>
+
+        <!-- ÁREA INTERACTIVA MEJORADA -->
+        <section class="card area-interactiva">
+            <div class="interactiva-header">
+                <i class="fas fa-piggy-bank"></i>
+                <h3>Configuración del Plan de Ahorro</h3>
+                <span class="badge">Máximo 40 meses</span>
+            </div>
+            <form id="formulario-ahorro" onsubmit="event.preventDefault(); calcularPlanAhorro();">
+                <div class="form-group">
+                    <label for="meses">
+                        <i class="fas fa-calendar-alt"></i>
+                        Plazo del plan de ahorro (en meses)
+                    </label>
+                    <input type="number" id="meses" name="meses" min="1" max="40" placeholder="Ejemplo: 12" required>
+                    <small>
+                        <i class="fas fa-info-circle"></i>
+                        Establece la cantidad de meses para procesar tu proyección financiera. 
+                        <strong>Rango: 1 a 40 meses</strong>
+                    </small>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" id="btn-calcular">
+                        <i class="fas fa-calculator"></i>
+                        Calcular Estados Financieros
+                        <i class="fas fa-chart-simple"></i>
+                    </button>
+                    <button type="button" id="btn-reset-ahorro" class="btn-reset" onclick="resetAhorro()">
+                        <i class="fas fa-undo-alt"></i>
+                        Limpiar
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- SECCIÓN DE RESULTADOS MEJORADA -->
+        <section class="card hidden" id="seccion-resultado">
+            <div class="resultado-header">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <h3>Reporte y Desglose Mensual Emitido</h3>
+                <span class="badge-resultado" id="resumen-fecha"></span>
+            </div>
+            
+            <!-- TARJETAS DE RESUMEN MEJORADAS -->
+            <div class="resumen-ahorro-grid">
+                <div class="resumen-card">
+                    <i class="fas fa-calendar-week"></i>
+                    <div class="resumen-info">
+                        <span class="resumen-label">Meses Evaluados</span>
+                        <span class="resumen-valor" id="resumen-meses">0</span>
+                    </div>
+                </div>
+                <div class="resumen-card total">
+                    <i class="fas fa-sack-dollar"></i>
+                    <div class="resumen-info">
+                        <span class="resumen-label">Capital Neto Consolidado</span>
+                        <span class="resumen-valor">Bs. <span id="resumen-total">0</span></span>
+                    </div>
+                </div>
+                <div class="resumen-card primos">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="resumen-info">
+                        <span class="resumen-label">Depósitos Primos Detectados</span>
+                        <span class="resumen-valor" id="resumen-primos">0</span>
+                    </div>
+                </div>
+                <div class="resumen-card monto-primos">
+                    <i class="fas fa-gem"></i>
+                    <div class="resumen-info">
+                        <span class="resumen-label">Monto en Depósitos Primos</span>
+                        <span class="resumen-valor">Bs. <span id="resumen-monto-primos">0</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <h4>
+                <i class="fas fa-table-list"></i>
+                Desglose Cronológico de Depósitos
+            </h4>
+            <div id="tabla-resultados" class="tabla-contenedor"></div>
+
+            <!-- GRÁFICO DE BARRAS VISUAL -->
+            <h4>
+                <i class="fas fa-chart-column"></i>
+                Visualización de Depósitos Mensuales
+            </h4>
+            <div id="grafico-ahorro" class="grafico-barras"></div>
+            <div class="leyenda-grafico">
+                <span><i class="fas fa-square" style="color: #10b981;"></i> Depósito Normal</span>
+                <span><i class="fas fa-square" style="color: #f59e0b;"></i> Depósito Primo (Blindado)</span>
+            </div>
+        </section>
+
+        <!-- REDIRECCIÓN MEJORADA -->
+        <section class="redireccion-proyectos">
+            <a href="seguridad.html" class="btn-siguiente">
+                <span>Volver al proyecto</span>
+                <i class="fas fa-shield-alt"></i>
+                <strong>Ciberseguridad</strong>
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 - Programación Web I | Joel Jonatan Chura Arroyo</p>
+            <div class="footer-tags">
+                <span><i class="fas fa-chart-line"></i> Fibonacci</span>
+                <span><i class="fas fa-shield-alt"></i> Números Primos</span>
+                <span><i class="fas fa-piggy-bank"></i> Ahorro Progresivo</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Js/script.js"></script>
+</body>
+</html>

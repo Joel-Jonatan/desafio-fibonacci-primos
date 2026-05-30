@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Análisis criptográfico usando números primos para validar códigos de acceso seguros">
+    <meta name="author" content="Joel Jonatan Chura Arroyo">
+    <title>Ciberseguridad | Números Primos en Accesos Seguros</title>
+    <link rel="stylesheet" href="Css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="theme-seguridad">
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <i class="fas fa-square-root-variable"></i>
+            <span>MathWeb I</span>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i><span> Inicio</span></a>
+            <a href="seguridad.html" class="active"><i class="fas fa-shield-alt"></i><span> Ciberseguridad</span></a>
+            <a href="naturaleza.html"><i class="fas fa-leaf"></i><span> Diseño Natural</span></a>
+            <a href="ahorro.html"><i class="fas fa-chart-line"></i><span> Plan de Ahorro</span></a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- BANNER CORREGIDO - ÍCONO VISIBLE Y TEXTO CENTRADO -->
+        <section class="card banner-tema">
+            <div class="banner-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h2>Análisis Criptográfico</h2>
+            <h3>Números Primos en Accesos Seguros</h3>
+            <p style="text-align: center;">Validación de códigos y protección criptográfica basada en propiedades de números primos.</p>
+        </section>
+
+        <!-- GRID CON TAMAÑOS IGUALES -->
+        <div class="grid-informacion-completa">
+            <section class="card">
+                <div class="card-header-icon">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>Contexto del Problema Real</h3>
+                </div>
+                <p>Las filtraciones de datos y ataques de fuerza bruta rompen millones de contraseñas débiles al día. La infraestructura bancaria y militar moderna utiliza criptografía RSA, un sistema que resguarda datos multiplicando números primos gigantes.</p>
+                <div class="contexto-highlight">
+                    <i class="fas fa-lock"></i>
+                    <span>🔐 98% de sistemas bancarios usan RSA</span>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="card-header-icon">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <h3>Análisis Matemático del Algoritmo</h3>
+                </div>
+                <p>Verificamos si un número es primo dividiéndolo entre todos sus predecesores. Si solo tiene dos divisores (1 y sí mismo), es primo y seguro para criptografía.</p>
+                <div class="algoritmo-ejemplo">
+                    <code>Ejemplo: 7 → solo divisible entre 1 y 7 → ¡PRIMO!</code>
+                </div>
+            </section>
+        </div>
+
+        <section class="card area-interactiva">
+            <div class="interactiva-header">
+                <i class="fas fa-key"></i>
+                <h3>Generador de Tokens Criptográficos</h3>
+                <span class="badge">Fibonacci + Números Primos</span>
+            </div>
+            <form id="formulario-seguridad" onsubmit="event.preventDefault(); generarTokensCriptograficos();">
+                <div class="form-group">
+                    <label for="codigo">
+                        <i class="fas fa-layer-group"></i>
+                        Cantidad de bloques de seguridad (1 - 25)
+                    </label>
+                    <input type="number" id="codigo" name="codigo" min="1" max="25" placeholder="Ejemplo: 10" required>
+                </div>
+                <button type="submit" id="btn-validar-codigo">
+                    <i class="fas fa-shield-virus"></i>
+                    Generar Cadena Criptográfica
+                </button>
+            </form>
+        </section>
+
+        <section class="card hidden" id="seccion-resultado-seguridad">
+            <div class="resultado-header">
+                <i class="fas fa-chart-simple"></i>
+                <h3>Análisis de Seguridad</h3>
+            </div>
+            <div id="caja-resultado-seguridad" class="resultado-dinamico"></div>
+        </section>
+
+        <section class="redireccion-proyectos">
+            <a href="naturaleza.html" class="btn-siguiente">
+                <span>Ir al siguiente proyecto</span>
+                <i class="fas fa-leaf"></i>
+                <strong>Diseño Natural</strong>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 - Programación Web I | Joel Jonatan Chura Arroyo</p>
+            <div class="footer-tags">
+                <span><i class="fas fa-shield-alt"></i> Ciberseguridad</span>
+                <span><i class="fas fa-square-root-variable"></i> Números Primos</span>
+                <span><i class="fas fa-lock"></i> Criptografía RSA</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Js/script.js"></script>
+</body>
+</html>
